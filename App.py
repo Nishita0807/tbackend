@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory
 import os
 import json
-import argparse
+
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app) # Enable CORS for your app
@@ -67,9 +67,9 @@ def serve_video(filename):
     return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--port", type=int, default=5000, help="Port number to run the server on")
-    args = parser.parse_args()
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("--port", type=int, default=5000, help="Port number to run the server on")
+    # args = parser.parse_args()
     
-    app.run(host="0.0.0.0", port=args.port)
+    app.run(host="0.0.0.0", port=5000)
     
